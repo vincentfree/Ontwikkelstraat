@@ -29,6 +29,7 @@ hs_err_pid*
 # .idea/dataSources.xml
 # .idea/sqlDataSources.xml
 # .idea/dynamic.xml
+/.idea/workspace.xml
 # .idea/uiDesigner.xml
 
 # Gradle:
