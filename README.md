@@ -15,7 +15,7 @@ Met het commando `docker run -d -p 8080:8080 -p 50000:50000 jenkins` start je in
 
 Er is een image aangemaakt op [https://hub.docker.com/r/dpmjansen/jenkins/](Docker Hub) waarop plugins voor git zijn geconfigureerd, zodat deze niet telkens opnieuw hoeven te worden gedownload.
 
-Om te zorgen dat je de jobs niet kwijt raakt na afloop van de configuratie is aan te raden om ***OF*** een datavolume aan te maken en deze te gebruiken ***OF*** een container met een data volume vanuit de host te starten
+Om te zorgen dat je de jobs niet kwijt raakt na afloop van de configuratie is aan te raden om ***OF*** een datavolume aan te maken en deze te gebruiken ***OF*** een container met een data volume vanuit de host te starten.
 
 *Concrete voorbeelden:*
 
