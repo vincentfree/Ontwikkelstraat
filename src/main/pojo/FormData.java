@@ -7,9 +7,17 @@ public class FormData {
 
     private String name;
     private String surname;
-    private String address;
+    private String streetName;
     private int houseNumber;
-    private String postalCode;
+    private String zipCode;
+
+    public FormData(String name, String surname, String streetName, int houseNumber, String zipCode) {
+        this.name = name;
+        this.surname = surname;
+        this.streetName = streetName;
+        this.houseNumber = houseNumber;
+        this.zipCode = zipCode;
+    }
 
     public String getName() {
         return name;
@@ -27,12 +35,12 @@ public class FormData {
         this.surname = surname;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
     public int getHouseNumber() {
@@ -43,11 +51,11 @@ public class FormData {
         this.houseNumber = houseNumber;
     }
 
-    public String getPostalCode() {
-        return postalCode;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }

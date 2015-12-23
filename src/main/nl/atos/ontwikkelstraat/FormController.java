@@ -21,19 +21,21 @@ public class FormController {
             @RequestParam() String name,
             @RequestParam() String surName,
             @RequestParam() String streetName,
-            @RequestParam() String houseNumber,
+            @RequestParam() int houseNumber,
             @RequestParam() String zipCode) {
 
-        String address = streetName + " " + houseNumber + " " + zipCode;
-        String nawData = name + " " + surName + " " + address;
+        FormData formData = new FormData(name, surName, streetName, houseNumber, zipCode);
+
+        String address = formData.getStreetName() + " " + formData.getHouseNumber() + " " + formData.getZipCode();
+        String nawData = formData.getName() + " " + formData.getSurname() + " " + address;
 
 
-        System.out.println("name: " + name);
-        System.out.println("surName: " + surName);
-        System.out.println("zipCode: " + zipCode);
-        System.out.println("houseNumber: " + houseNumber);
-        System.out.println("streetName: " + streetName);
-        System.out.println("address: " + address);
-        System.out.println("nawData: " + nawData);
+        System.out.println("voornaam: " + formData.getName());
+        System.out.println("achternaam: " + formData.getSurname());
+        System.out.println("postcode: " + formData.getZipCode());
+        System.out.println("huisNummer: " + formData.getHouseNumber());
+        System.out.println("straatNaam: " + formData.getStreetName());
+        System.out.println("adres: " + address);
+        System.out.println("nawGegevens: " + nawData);
     }
 }
