@@ -14,7 +14,7 @@ In dit voorbeeld hebben we gebruik gemaakt van docker om Jenkins te starten.
 Met het commando `docker run -d -p 8080:8080 -p 50000:50000 jenkins` start je in docker een instantie van Jenkins wat dient als de basis voor CI.
 
 ###### Jenkins Image met github plugins
-Er is een image aangemaakt op [https://hub.docker.com/r/dpmjansen/jenkins/](Docker Hub) waarop plugins voor git zijn geconfigureerd, zodat deze niet telkens opnieuw hoeven te worden gedownload.
+Er is een image aangemaakt op [Docker Hub](https://hub.docker.com/r/dpmjansen/jenkins/) waarop plugins voor git zijn geconfigureerd, zodat deze niet telkens opnieuw hoeven te worden gedownload.
 
 ###### Persisteren van jobs/andere data lokaal
 Om te zorgen dat je de jobs niet kwijt raakt na afloop van de configuratie is aan te raden om ***OF*** een datavolume aan te maken en deze te gebruiken ***OF*** een container met een data volume vanuit de host te starten.
@@ -39,4 +39,4 @@ $ docker run -d -p 8080:8080 -p 50000:50000 -v </jouw/pad/naar/je/eigen>/var/jen
     <start-class>nl.atos.ontwikkelstraat.OntwikkelstraatApplication</start-class>
 </properties>
 ```
-Bovenstaande toegevoegd, zodat jenkins weet waar het startpunt is van spring-boot
+Bovenstaande toegevoegd aan de POM, zodat jenkins weet waar het startpunt is van spring-boot
