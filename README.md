@@ -4,12 +4,10 @@ Project ontwikkelstraat voor atos.
 * test 1
 * test 2
 
-Toevoeging gedaan:
-```java
-public static void main(String[] args){
-
-}
+## Bugfix
+```xml
+<properties>
+    <start-class>nl.atos.ontwikkelstraat.OntwikkelstraatApplication</start-class>
+</properties>
 ```
-
->"Zoals het klokje thuis tikt
->tikt het nergens"
+Bovenstaande toegevoegd, zodat jenkins weet waar het startpunt is van spring-boot
