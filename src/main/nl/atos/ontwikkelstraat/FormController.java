@@ -20,14 +20,20 @@ public class FormController {
     public void processData(
             @RequestParam() String name,
             @RequestParam() String surName,
-            @RequestParam() String address,
+            @RequestParam() String streetName,
             @RequestParam() String houseNumber,
             @RequestParam() String zipCode) {
+
+        String address = streetName + " " + houseNumber + " " + zipCode;
+        String nawData = name + " " + surName + " " + address;
+
 
         System.out.println("name: " + name);
         System.out.println("surName: " + surName);
         System.out.println("zipCode: " + zipCode);
         System.out.println("houseNumber: " + houseNumber);
+        System.out.println("streetName: " + streetName);
         System.out.println("address: " + address);
+        System.out.println("nawData: " + nawData);
     }
 }
