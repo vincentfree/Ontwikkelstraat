@@ -86,10 +86,63 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">Maak jezelf bij ons bekend!</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+
+                    <form class="form-horizontal" action="/form" method="post">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label class="control-label" for="name">Naam</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="name" name="name" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label for="surName">Achternaam</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="surName" name="surName">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label for="streetName">Adres</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="streetName" name="streetName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label for="houseNumber">Huisnummer</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="houseNumber" name="houseNumber">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-xs-2">
+                                    <label for="zipCode">Postcode</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="zipCode" name="zipCode">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default btn-xl">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
