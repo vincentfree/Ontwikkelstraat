@@ -16,7 +16,7 @@ import pojo.FormData;
 public class FormController {
 
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseStatus (HttpStatus.CREATED)
+    @ResponseStatus (HttpStatus.OK)
     public void processData(
             @RequestParam() String name,
             @RequestParam() String surName,
@@ -29,7 +29,10 @@ public class FormController {
         String address = formData.getStreetName() + " " + formData.getHouseNumber() + " " + formData.getZipCode();
         String nawData = formData.getName() + " " + formData.getSurname() + " " + address;
 
+        printData(formData, address, nawData);
+    }
 
+    private void printData(FormData formData, String address, String nawData){
         System.out.println("voornaam: " + formData.getName());
         System.out.println("achternaam: " + formData.getSurname());
         System.out.println("postcode: " + formData.getZipCode());
@@ -38,4 +41,5 @@ public class FormController {
         System.out.println("adres: " + address);
         System.out.println("nawGegevens: " + nawData);
     }
+
 }
