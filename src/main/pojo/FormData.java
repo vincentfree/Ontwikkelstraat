@@ -10,6 +10,7 @@ public class FormData {
     private String streetName;
     private int houseNumber;
     private String zipCode;
+    private int testInt;
 
     public FormData(String name, String surname, String streetName, int houseNumber, String zipCode) {
         this.name = name;
