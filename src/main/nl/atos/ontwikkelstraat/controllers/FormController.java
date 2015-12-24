@@ -1,4 +1,4 @@
-package nl.atos.ontwikkelstraat;
+package nl.atos.ontwikkelstraat.controllers;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import pojo.FormData;
+import nl.atos.ontwikkelstraat.pojos.FormData;
 
 
 @Controller

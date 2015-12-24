@@ -7,31 +7,30 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
-/**
- * Created by vagrant on 12/24/15.
- */
-public class FormControllerSteps {
-    private final WebDriver driver;
 
-    public FormControllerSteps(SharedDriver driver) {
-        this.driver = driver;
+public class FormControllerSteps {
+    private final WebDriver webdriver;
+
+    public FormControllerSteps(SharedDriver webdriver) {
+        this.webdriver = webdriver;
     }
 
 
     @Given ("^That the website is running and I navigated to it$")
-    public void That_the_website_is_running_and_I_navigated_to_it() {
-        driver.manage().window().maximize();
-        driver.get("http://localhost:8080/");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public void That_the_website_is_running_and_I_navigated_to_it() throws InterruptedException {
+        webdriver.manage().window().maximize();
+        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        webdriver.get("http://localhost:8080/");
+
     }
     @When ("^I fill in my firstName with \"([^\"]*)\"$")
     public void I_fill_in_my_firstName_with(String firstname) throws Throwable {
-        driver.findElement(By.id("name")).sendKeys(firstname);
-        assertEquals(firstname, driver.findElement(By.id("name")).getText());
+        webdriver.findElement(By.id("name")).sendKeys(firstname);
+        assertEquals(firstname, webdriver.findElement(By.id("name")).getText());
         throw new PendingException();
     }
     @When ("^I fill in my firstName$")
