@@ -2,5 +2,5 @@ language: java
 jdk:
   - oraclejdk8
   - oraclejdk7
-before_script: mvn clean install spring-boot:start
+before_script: mvn compiler:compile spring-boot:start
 after_script: mvn spring-boot:stop
