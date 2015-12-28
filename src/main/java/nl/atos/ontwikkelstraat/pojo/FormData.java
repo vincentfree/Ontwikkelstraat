@@ -1,18 +1,26 @@
 package nl.atos.ontwikkelstraat.pojo;
 
+import javax.validation.constraints.Size;
+
 /**
  * Created by vagrant on 12/23/15.
  */
 public class FormData {
 
+    @Size (min=4, max=35)
     private String name;
+    @Size(min=4, max=35)
     private String surname;
+    @Size(min=4, max=35)
     private String streetName;
-    private int houseNumber;
+    @Size(min=4, max=35)
+    private String houseNumber;
+    @Size(min=4, max=35)
     private String zipCode;
-    private int testInt;
 
-    public FormData(String name, String surname, String streetName, int houseNumber, String zipCode) {
+    public FormData(){}
+
+    public FormData(String name, String surname, String streetName, String houseNumber, String zipCode) {
         this.name = name;
         this.surname = surname;
         this.streetName = streetName;
@@ -44,11 +52,11 @@ public class FormData {
         this.streetName = streetName;
     }
 
-    public int getHouseNumber() {
+    public String getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(int houseNumber) {
+    public void setHouseNumber(String houseNumber) {
         this.houseNumber = houseNumber;
     }
 

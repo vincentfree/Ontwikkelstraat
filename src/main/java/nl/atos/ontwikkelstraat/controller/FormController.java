@@ -1,45 +1,60 @@
 package nl.atos.ontwikkelstraat.controller;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.http.HttpStatus;
+import nl.atos.ontwikkelstraat.pojo.FormData;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import nl.atos.ontwikkelstraat.pojos.FormData;
 
+import javax.validation.Valid;
 
 @Controller
-@EnableAutoConfiguration
-@RequestMapping("/form")
 public class FormController {
 
-    @RequestMapping(method = RequestMethod.POST)
-    @ResponseStatus (HttpStatus.OK)
-    public void processData(
-            @RequestParam() String name,
-            @RequestParam() String surName,
-            @RequestParam() String streetName,
-            @RequestParam() int houseNumber,
-            @RequestParam() String zipCode) {
-
-        FormData formData = new FormData(name, surName, streetName, houseNumber, zipCode);
-
-        String address = formData.getStreetName() + " " + formData.getHouseNumber() + " " + formData.getZipCode();
-        String nawData = formData.getName() + " " + formData.getSurname() + " " + address;
-
-        printData(formData, address, nawData);
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String index(FormData formData) {
+        return "index";
     }
 
-    private void printData(FormData formData, String address, String nawData){
-        System.out.println("voornaam: " + formData.getName());
-        System.out.println("achternaam: " + formData.getSurname());
-        System.out.println("postcode: " + formData.getZipCode());
-        System.out.println("huisNummer: " + formData.getHouseNumber());
-        System.out.println("straatNaam: " + formData.getStreetName());
-        System.out.println("adres: " + address);
-        System.out.println("nawGegevens: " + nawData);
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public String addNewPost(@Valid FormData formData, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "index";
+        }
+        model.addAttribute("name", formData.getName());
+        model.addAttribute("surname", formData.getSurname());
+        model.addAttribute("streetName", formData.getStreetName());
+        model.addAttribute("houseNumber", formData.getHouseNumber());
+        model.addAttribute("zipCode", formData.getZipCode());
+        return "result";
     }
+
+//    @RequestMapping(value="/", method=RequestMethod.POST)
+//    public void processData(
+//            @RequestParam() String name,
+//            @RequestParam() String surName,
+//            @RequestParam() String streetName,
+//            @RequestParam() int houseNumber,
+//            @RequestParam() String zipCode) {
+//
+//        FormData formData = new FormData(name, surName, streetName, houseNumber, zipCode);
+//
+//        String address = formData.getStreetName() + " " + formData.getHouseNumber() + " " + formData.getZipCode();
+//        String nawData = formData.getName() + " " + formData.getSurname() + " " + address;
+//
+//        printData(formData, address, nawData);
+//    }
+//
+//    private void printData(FormData formData, String address, String nawData){
+//        System.out.println("voornaam: " + formData.getName());
+//        System.out.println("achternaam: " + formData.getSurname());
+//        System.out.println("postcode: " + formData.getZipCode());
+//        System.out.println("huisNummer: " + formData.getHouseNumber());
+//        System.out.println("straatNaam: " + formData.getStreetName());
+//        System.out.println("adres: " + address);
+//        System.out.println("nawGegevens: " + nawData);
+//    }
 
 }
