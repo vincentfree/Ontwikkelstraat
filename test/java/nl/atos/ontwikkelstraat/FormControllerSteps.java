@@ -13,10 +13,10 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 public class FormControllerSteps {
-    private final WebDriver webdriver;
+    private WebDriver webdriver;
 
-    public FormControllerSteps(SharedDriver webdriver) {
-        this.webdriver = webdriver;
+    public FormControllerSteps() {
+        this.webdriver = MyDriverFactory.getSharedDriver();
     }
 
 
@@ -24,7 +24,9 @@ public class FormControllerSteps {
     public void That_the_website_is_running_and_I_navigated_to_it() throws InterruptedException {
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-        webdriver.get("http://localhost:8080/");
+        if(System.getenv("TRAVIS")=="true") {
+            webdriver.get("localhost:4445");
+        }else webdriver.get("http://localhost:8080/");
 
     }
     @When ("^I fill in my firstName with \"([^\"]*)\"$")
@@ -75,4 +77,11 @@ public class FormControllerSteps {
     }
 
 
+    @And("^The browser should be closed$")
+    public void theBrowserShouldBeClosed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        //webdriver.close();
+        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        webdriver.close();
+    }
 }

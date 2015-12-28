@@ -32,12 +32,3 @@ Container starten met data volume vanuit host directory:
 ```bash
 $ docker run -d -p 8080:8080 -p 50000:50000 -v </jouw/pad/naar/je/eigen>/var/jenkins_home:/var/jenkins_home dpmjansen/jenkins
 ```
-
-
-## Bugfix
-```xml
-<properties>
-    <start-class>nl.atos.ontwikkelstraat.OntwikkelstraatApplication</start-class>
-</properties>
-```
-Bovenstaande toegevoegd aan de POM, zodat jenkins weet waar het startpunt is van spring-boot
