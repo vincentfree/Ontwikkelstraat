@@ -15,7 +15,8 @@ public class MyDriverFactory {
 
     public static final String USERNAME = "vincentfree";
     public static final String ACCESS_KEY = "fbbc3f8c-c2e6-4a3a-95c9-e5b5c27d0854";
-    public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@localhost:8080/wd/hub";
+    public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
+    //public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@localhost:8080/wd/hub";
     public static DesiredCapabilities caps;
     private static WebDriver sharedDriver;
 
