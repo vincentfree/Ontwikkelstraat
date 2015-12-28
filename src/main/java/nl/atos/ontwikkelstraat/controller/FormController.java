@@ -1,4 +1,4 @@
-package nl.atos.ontwikkelstraat.controllers;
+package nl.atos.ontwikkelstraat.controller;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;

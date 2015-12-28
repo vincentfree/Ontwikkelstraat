@@ -1,4 +1,4 @@
-package nl.atos.ontwikkelstraat.pojos;
+package nl.atos.ontwikkelstraat.pojo;
 
 /**
  * Created by vagrant on 12/23/15.

@@ -28,10 +28,10 @@ public class FormControllerSteps {
 
     }
     @When ("^I fill in my firstName with \"([^\"]*)\"$")
-    public void I_fill_in_my_firstName_with(String firstname) throws Throwable {
+    public void I_fill_in_my_firstName_with(String firstname) {
         webdriver.findElement(By.id("name")).sendKeys(firstname);
-        assertEquals(firstname, webdriver.findElement(By.id("name")).getText());
-        throw new PendingException();
+        assertEquals(firstname, webdriver.findElement(By.id("name")).getAttribute("value"));
+        //System.out.println(webdriver.findElement(By.id("name")).getAttribute("value"));
     }
     @When ("^I fill in my firstName$")
     public void I_fill_in_my_firstName() throws Throwable {
