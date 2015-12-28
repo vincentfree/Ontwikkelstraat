@@ -33,6 +33,8 @@ public class SampleSauceTest {
 
         caps.setCapability("version", "43.0");
 
+        caps.setCapability("tunnel-identifier","ENV['TRAVIS_JOB_NUMBER']");
+
 
         WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 

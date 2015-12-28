@@ -8,10 +8,16 @@ package nl.atos.ontwikkelstraat;
         import cucumber.api.java.After;
         import cucumber.api.java.Before;
         import org.openqa.selenium.OutputType;
+        import org.openqa.selenium.Platform;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebDriverException;
         import org.openqa.selenium.firefox.FirefoxDriver;
+        import org.openqa.selenium.remote.DesiredCapabilities;
+        import org.openqa.selenium.remote.RemoteWebDriver;
         import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+        import java.net.MalformedURLException;
+        import java.net.URL;
 
 /**
  * <p>
@@ -34,7 +40,12 @@ package nl.atos.ontwikkelstraat;
  * </p>
  */
 public class SharedDriver extends EventFiringWebDriver {
-    private static final WebDriver REAL_DRIVER = new FirefoxDriver();
+
+    public static final String USERNAME = "vincentfree";
+    public static final String ACCESS_KEY = "fbbc3f8c-c2e6-4a3a-95c9-e5b5c27d0854";
+    public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
+    public static DesiredCapabilities caps;
+    private static WebDriver REAL_DRIVER; //new FirefoxDriver();
     private static final Thread CLOSE_THREAD = new Thread() {
         @Override
         public void run() {
@@ -44,10 +55,20 @@ public class SharedDriver extends EventFiringWebDriver {
 
     static {
         Runtime.getRuntime().addShutdownHook(CLOSE_THREAD);
+        caps = DesiredCapabilities.chrome();
+
+        caps.setCapability("platform", "Win8");
+
+        caps.setCapability("version", "43.0");
+
+        caps.setCapability("tunnel-identifier","ENV['TRAVIS_JOB_NUMBER']");
     }
 
-    public SharedDriver() {
-        super(REAL_DRIVER);
+    public SharedDriver() throws MalformedURLException{
+        super(REAL_DRIVER = new RemoteWebDriver(new URL(URL),caps));
+
+
+        //REAL_DRIVER = new RemoteWebDriver(new URL(URL), caps);
     }
 
     @Override
