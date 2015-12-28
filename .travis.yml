@@ -2,5 +2,11 @@ language: java
 jdk:
   - oraclejdk8
   - oraclejdk7
-before_script: spring-boot:start
+addons:
+  sauce_connect:
+    username: "vincentfree"
+    access_key: "UIITEtjmmKHYnyvW48kYdsb4pCRH3d5/M/YczCbM6dpQr/eAWPn6T2mzc2eZVE5Pamz9JlJJYPH+KJsqmfdmZF24R1gSGJy8VM1q3pD/xejWt8w4iYGJ5inDnZRvx4h69SkrT9ZShG1iYTipZsuj67Rt+oJZ8COBucw9zlvPb70/UN82FMTCWofJrRV+Y/Bz/SEuu7X+mD+tBnCgJMBSO3X5nByHmeACKpQnZWRvTSJ38kwhgLfoCJgWoxSS4IR2U8Y7+8HgoZ4twrjMRXGpvV5xHdJT/QkzZIc05gDx5e4HOQp0UingwaeAVxYUGkt4gq3xxObPpRxakyiWpOYKOgtIfdIi+odL2UJhsJjfVIyQOBQAIeq2Pja/jCf0zolGR/fQEra7cKQA+2t7dU9KRrI6TQjdGQi21eCoEgnOEpLd+Cw/YqhdvrwuPQ3sLZroF2cyjIDPrzkcpXMElIX/JzSKyTetVLLoQXQYN6h2PUKonXeJs3Rl0DWV811JaDcVRtH/s3h68Q+N/JhrZgmJyKgII54qQmvImhVwMnzAyGQfqsqa8G1ffW4k48zjDt9QF8htTqvV0ikM+voM5QVDHt9droMHoWbjrq8T2Zap+zxUn1nZzjVJkw/pXSdMWY70CfIRJxPcl3oJ+XOJ0+gOx9MBX19Qx3e3jNHg2mBCK6A="
+
+
+before_script: spring-boot:run
 after_script: mvn spring-boot:stop
