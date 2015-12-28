@@ -13,10 +13,10 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 public class FormControllerSteps {
-    private final WebDriver webdriver;
+    private WebDriver webdriver;
 
-    public FormControllerSteps(SharedDriver webdriver) {
-        this.webdriver = webdriver;
+    public FormControllerSteps() {
+        this.webdriver = MyDriverFactory.getSharedDriver();
     }
 
 
@@ -77,4 +77,11 @@ public class FormControllerSteps {
     }
 
 
+    @And("^The browser should be closed$")
+    public void theBrowserShouldBeClosed() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        //webdriver.close();
+        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        webdriver.close();
+    }
 }
