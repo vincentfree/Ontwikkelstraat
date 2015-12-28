@@ -61,7 +61,7 @@ public class SharedDriver extends EventFiringWebDriver {
 
         caps.setCapability("version", "43.0");
 
-        caps.setCapability("tunnel-identifier","ENV['TRAVIS_JOB_NUMBER']");
+        caps.setCapability("tunnel-identifier","TRAVIS_JOB_NUMBER");
     }
 
     public SharedDriver() throws MalformedURLException{
