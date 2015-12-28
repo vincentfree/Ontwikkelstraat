@@ -3,7 +3,7 @@ machine:
      version: oraclejdk8
 test:
    pre:
-     - mvn spring-boot:start
+     - mvn spring-boot:run
    post:
      - mkdir -p $CIRCLE_TEST_REPORTS/cucumber/
      - find . -type f -regex ".*/target/cucumber/.*cucumber" -exec cp {} $CIRCLE_TEST_REPORTS/cucumber/ \;
