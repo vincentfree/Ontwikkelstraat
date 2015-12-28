@@ -55,14 +55,14 @@ public class SharedDriver extends EventFiringWebDriver {
 
     static {
         Runtime.getRuntime().addShutdownHook(CLOSE_THREAD);
-        String tunnel = System.getenv("TRAVIS_JOB_NUMBER");
+        //String tunnel = System.getenv("TRAVIS_JOB_NUMBER");
         caps = DesiredCapabilities.chrome();
 
         caps.setCapability("platform", "Win8");
 
         caps.setCapability("version", "43.0");
 
-        caps.setCapability("tunnel-identifier",tunnel);
+        //caps.setCapability("tunnel-identifier",tunnel);
     }
 
     public SharedDriver() throws MalformedURLException{
