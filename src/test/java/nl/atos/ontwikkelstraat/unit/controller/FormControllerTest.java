@@ -1,7 +1,14 @@
 package nl.atos.ontwikkelstraat.unit.controller;
 
-/**
- * Created by vagrant on 12/29/15.
- */
+import org.junit.Test;
+
+
 public class FormControllerTest {
+
+    @Test
+    public void index(){
+        //blabla
+    }
+
+
 }
