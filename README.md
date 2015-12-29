@@ -1,6 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/vincentfree/Ontwikkelstraat.png?label=ready&title=Ready)](https://waffle.io/vincentfree/Ontwikkelstraat)
 [![Build Status](https://travis-ci.org/vincentfree/Ontwikkelstraat.svg?branch=master)](https://travis-ci.org/vincentfree/Ontwikkelstraat)
 [![Circle CI](https://circleci.com/gh/vincentfree/Ontwikkelstraat.svg?style=svg)](https://circleci.com/gh/vincentfree/Ontwikkelstraat)
+[![Coverage Status](https://coveralls.io/repos/vincentfree/Ontwikkelstraat/badge.svg?branch=master&service=github)](https://coveralls.io/github/vincentfree/Ontwikkelstraat?branch=master)
 # Ontwikkelstraat
 
 ### Afhankelijkheden
