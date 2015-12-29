@@ -4,7 +4,9 @@ machine:
 test:
 
    post:
-     - mkdir -p $CIRCLE_TEST_REPORTS/cucumber/
-     - find . -type f -regex ".*/target/cucumber/.*cucumber" -exec cp {} $CIRCLE_TEST_REPORTS/cucumber/ \;
-     - mkdir -p $CIRCLE_TEST_REPORTS/webreport/
-     - cp -r ./target/cukes/ $CIRCLE_TEST_REPORTS/webreport/
+     #- mkdir -p $CIRCLE_TEST_REPORTS/cucumber/
+     #- find . -type f -regex ".*/target/cucumber/.*cucumber" -exec cp {} $CIRCLE_TEST_REPORTS/cucumber/ \;
+     #- mkdir -p $CIRCLE_TEST_REPORTS/webreport/
+     #- cp -r ./target/cukes/ $CIRCLE_TEST_REPORTS/webreport/
+     - mkdir -p $CIRCLE_TEST_REPORTS/unit_test/report/
+     - find . -type f -regex ".*/target/surefire-report/" -exec cp {} $CIRCLE_TEST_REPORTS/unit_test/report/ \;
