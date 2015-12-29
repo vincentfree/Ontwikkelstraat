@@ -16,7 +16,6 @@ import javax.validation.Valid;
 public class FormController {
 
     @RequestMapping(value="/", method=RequestMethod.GET)
-    @ResponseStatus (HttpStatus.NO_CONTENT)
     public String index(FormData formData) {
         return "index";
     }
