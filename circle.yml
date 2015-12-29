@@ -2,11 +2,13 @@ machine:
    java:
      version: oraclejdk8
 test:
-   pre:
-     - mvn spring-boot:start
+
    post:
-     - mkdir -p $CIRCLE_TEST_REPORTS/cucumber/
-     - find . -type f -regex ".*/target/cucumber/.*cucumber" -exec cp {} $CIRCLE_TEST_REPORTS/cucumber/ \;
-     - mkdir -p $CIRCLE_TEST_REPORTS/webreport/
-     - cp -r ./target/cukes/ $CIRCLE_TEST_REPORTS/webreport/
-     - mvn spring-boot:stop
+     #- mkdir -p $CIRCLE_TEST_REPORTS/cucumber/
+     #- find . -type f -regex ".*/target/cucumber/.*cucumber" -exec cp {} $CIRCLE_TEST_REPORTS/cucumber/ \;
+     #- mkdir -p $CIRCLE_TEST_REPORTS/webreport/
+     #- cp -r ./target/cukes/ $CIRCLE_TEST_REPORTS/webreport/
+     - mkdir -p $CIRCLE_ARTIFACTS/unit_test/report/
+     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+     - find . -type f -regex ".*/target/surefire-reports/.*txt" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
