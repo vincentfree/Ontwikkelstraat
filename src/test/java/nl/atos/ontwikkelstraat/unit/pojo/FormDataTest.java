@@ -33,5 +33,9 @@ public class FormDataTest {
     public void getZipCode(){
         assertEquals(formData.getZipCode(), "9714AP");
     }
-
+    @Test
+    public void setName(){
+        formData.setName("Hendrik");
+        assertEquals(formData.getName(), "Hendrik");
+    }
 }
