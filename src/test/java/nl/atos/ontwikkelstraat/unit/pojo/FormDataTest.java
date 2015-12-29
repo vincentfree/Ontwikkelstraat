@@ -34,4 +34,10 @@ public class FormDataTest {
         assertEquals(formData.getZipCode(), "9714AP");
     }
 
+    @Test
+    public void setSurname(){
+        formData.setSurname("Hendrik");
+        assertEquals(formData.getSurname(),"Hendrik");
+    }
+
 }
