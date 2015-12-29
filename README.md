@@ -1,5 +1,6 @@
 [![Stories in Ready](https://badge.waffle.io/vincentfree/Ontwikkelstraat.png?label=ready&title=Ready)](https://waffle.io/vincentfree/Ontwikkelstraat)
 [![Build Status](https://travis-ci.org/vincentfree/Ontwikkelstraat.svg?branch=master)](https://travis-ci.org/vincentfree/Ontwikkelstraat)
+[![Circle CI](https://circleci.com/gh/vincentfree/Ontwikkelstraat.svg?style=svg)](https://circleci.com/gh/vincentfree/Ontwikkelstraat)
 # Ontwikkelstraat
 
 ### Afhankelijkheden
