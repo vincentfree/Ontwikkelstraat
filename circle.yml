@@ -9,4 +9,5 @@ test:
      #- mkdir -p $CIRCLE_TEST_REPORTS/webreport/
      #- cp -r ./target/cukes/ $CIRCLE_TEST_REPORTS/webreport/
      - mkdir -p $CIRCLE_ARTIFACTS/unit_test/report/
-     - find . -type f -regex ".*/target/surefire-report/" -exec cp {} $CIRCLE_ARTIFACTS/unit_test/report/ \;
+     - mkdir -p $CIRCLE_TEST_REPORTS/unit_test/report/XML/
+     - find . -type f -regex ".*/target/surefire-report/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/unit_test/report/XML/ \;
