@@ -35,7 +35,7 @@ Container starten met data volume vanuit host directory:
 $ docker run -d -p 8080:8080 -p 50000:50000 -v </jouw/pad/naar/je/eigen>/var/jenkins_home:/var/jenkins_home dpmjansen/jenkins
 ```
 
-Project starten vanuit docker:
+###### Project starten vanuit docker
 ```
 $ docker run -d -p 8080:8080 atostsnoord/ontwikkelstraat
 ```
