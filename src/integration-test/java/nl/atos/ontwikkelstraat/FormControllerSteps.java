@@ -24,7 +24,7 @@ public class FormControllerSteps {
     public void That_the_website_is_running_and_I_navigated_to_it() throws InterruptedException {
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-        if(System.getenv("TRAVIS").equals("true")) {
+        if(System.getenv("TRAVIS")=="true") {
             webdriver.get("localhost:4445");
         }else webdriver.get("http://localhost:8080/");
 
@@ -82,8 +82,8 @@ public class FormControllerSteps {
     public void theBrowserShouldBeClosed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //webdriver.close();
-        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-        webdriver.close();
+//        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+//        webdriver.close();
     }
 
     @And("^I fill in my lastName with \"([^\"]*)\"$")
