@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Controleer gegevens</title>
+        <title>Definitieve aanmelding</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,15 +37,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <form action="#" th:action="@{/naw}" th:object="${formData}" method="post">
-                        <h3>Controleer gegevens</h3> <br/>
-                        <b>Voornaam:</b> <input th:field="*{name}" /><br/>
-                        <b>Achternaam:</b> <input th:field="*{surname}"/><br/>
-                        <b>Straatnaam:</b> <input th:field="*{streetName}"/><br/>
-                        <b>Huisnummer:</b> <input th:field="*{houseNumber}" /><br/>
-                        <b>Postcode:</b> <input th:field="*{zipCode}"/><br/>
-                        <button type="submit">Submit post</button>
-                    </form>
+                    <h3>U bent aangemeld met de volgende gegevens:</h3> <br/>
+                        <b>Volledige naam:</b> <span th:text="${fullName}" /><br/>
+                        <b>Adres:</b> <span th:text="${address}" /><br/>
+                        <br/>
+                        <form action="http://localhost:8080">
+                            <input type="submit" value="Terug naar beginscherm" />
+                        </form>
                 </div>
             </div>
         </div>
