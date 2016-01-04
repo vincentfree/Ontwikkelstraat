@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/vincentfree/Ontwikkelstraat/badge.svg?branch=master&service=github)](https://coveralls.io/github/vincentfree/Ontwikkelstraat?branch=master)
 # Ontwikkelstraat
 
+
 ### Afhankelijkheden
 
 * Docker
@@ -34,3 +35,6 @@ Container starten met data volume vanuit host directory:
 ```bash
 $ docker run -d -p 8080:8080 -p 50000:50000 -v </jouw/pad/naar/je/eigen>/var/jenkins_home:/var/jenkins_home dpmjansen/jenkins
 ```
+
+###Ontwikkel Cyclus
+![text](https://github.com/vincentfree/Ontwikkelstraat/blob/Toevoeging-van-ontwikkelcycle-plaatje/src/main/resources/ontwikkelcyclus.png)
