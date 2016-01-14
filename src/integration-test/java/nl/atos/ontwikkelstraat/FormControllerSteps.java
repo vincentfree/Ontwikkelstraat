@@ -67,6 +67,7 @@ public class FormControllerSteps {
     @And ("^I hit the submit button$")
     public void I_hit_the_submit_button() throws Throwable {
         // Express the Regexp above with the code you wish you had
+        webdriver.findElement(By.name("testSubmit")).click();
         throw new PendingException();
     }
 
@@ -81,7 +82,31 @@ public class FormControllerSteps {
     public void theBrowserShouldBeClosed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //webdriver.close();
-        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-        webdriver.close();
+//        webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+//        webdriver.close();
+    }
+
+    @And("^I fill in my lastName with \"([^\"]*)\"$")
+    public void I_fill_in_my_lastName_with(String lastName) throws Throwable {
+        webdriver.findElement(By.id("surname")).sendKeys(lastName);
+        assertEquals(lastName, webdriver.findElement(By.id("surname")).getAttribute("value"));
+    }
+
+    @And("^I fill in my StreetName with \"([^\"]*)\"$")
+    public void I_fill_in_my_StreetName_with(String streetName) throws Throwable {
+        webdriver.findElement(By.id("streetName")).sendKeys(streetName);
+        assertEquals(streetName, webdriver.findElement(By.id("streetName")).getAttribute("value"));
+    }
+
+    @And("^I fill in my HouseNumber with \"([^\"]*)\"$")
+    public void I_fill_in_my_HouseNumber_with(String houseNumber) throws Throwable {
+        webdriver.findElement(By.id("houseNumber")).sendKeys(houseNumber);
+        assertEquals(houseNumber, webdriver.findElement(By.id("houseNumber")).getAttribute("value"));
+    }
+
+    @And("^I fill in my Zipcode with \"([^\"]*)\"$")
+    public void I_fill_in_my_Zipcode_with(String zipCode) throws Throwable {
+        webdriver.findElement(By.id("zipCode")).sendKeys(zipCode);
+        assertEquals(zipCode, webdriver.findElement(By.id("zipCode")).getAttribute("value"));
     }
 }
