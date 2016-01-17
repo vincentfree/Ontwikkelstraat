@@ -141,7 +141,6 @@
             </snapshots>
         </repository>
     </repositories>
-
     <build>
         <plugins>
             <plugin>
@@ -160,6 +159,10 @@
                             <goal>verify</goal>
                         </goals>
                         <configuration>
+                            <includes>
+                                <include>**/IT*.java</include>
+                                <!--<include>ITFormController.java</include>-->
+                            </includes>
                             <!--
                                 Skips integration tests if the value of skip.integration.tests
                                 property is true
@@ -168,6 +171,7 @@
                             <excludes>
                                 <exclude>**/RunAllCu*.java</exclude>
                             </excludes>
+
                         </configuration>
                     </execution>
                 </executions>
@@ -179,7 +183,6 @@
                     <execution>
                         <id>pre-integration-test</id>
                         <goals>
-                            <goal>stop</goal>
                             <goal>start</goal>
                         </goals>
                     </execution>
@@ -190,6 +193,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <excludes>
+                        <exclude>ITFormController.java</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
