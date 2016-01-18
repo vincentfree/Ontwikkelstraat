@@ -13,10 +13,10 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 public class FormControllerSteps {
-    private WebDriver webdriver;
+    private final WebDriver webdriver;
 
-    public FormControllerSteps() {
-        this.webdriver = MyDriverFactory.getSharedDriver();
+    public FormControllerSteps(SharedDriver webdriver) {
+        this.webdriver = webdriver;
     }
 
 
