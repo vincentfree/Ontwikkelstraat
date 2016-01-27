@@ -1,5 +1,5 @@
 # voert automatisch install uit
-FROM jamesnetherton/java
+FROM anapsix/alpine-java
 ENV MAVEN_VERSION 3.3.3
 ENV PATH /usr/share/apache-maven-${MAVEN_VERSION}/bin:${PATH}
 
