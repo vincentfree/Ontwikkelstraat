@@ -11,7 +11,7 @@ RUN apk --update add curl && \
 #uit maven onbuild
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-ONBUILD ADD . /usr/src/app
-ONBUILD RUN mvn install
+COPY . /usr/src/app
+CMD ["mvn", "install"]
 # commando voor het uitvoeren van java jar
 CMD ["java", "-jar", "/usr/src/app/target/Ontwikkelstraat-0.0.1-SNAPSHOT.jar"]
