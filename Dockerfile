@@ -12,6 +12,6 @@ RUN apk --update add curl && \
 RUN mkdir -p /usr/share/app
 WORKDIR /usr/share/app
 COPY . /usr/share/app
-RUN mvn install
+RUN mvn install -Dmaven.test.skip=true
 # commando voor het uitvoeren van java jar
 CMD ["java", "-jar", "/usr/share/app/target/Ontwikkelstraat-0.0.1-SNAPSHOT.jar"]
