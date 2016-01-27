@@ -1,5 +1,5 @@
 # voert automatisch install uit
-FROM anapsix/alpine-java
+FROM anapsix/alpine-java:jdk8
 ENV MAVEN_VERSION 3.3.3
 ENV PATH /usr/share/apache-maven-${MAVEN_VERSION}/bin:${PATH}
 
@@ -14,4 +14,4 @@ WORKDIR /usr/share/app
 COPY . /usr/share/app
 RUN mvn install
 # commando voor het uitvoeren van java jar
-#CMD ["java", "-jar", "/usr/share/app/target/Ontwikkelstraat-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "/usr/share/app/target/Ontwikkelstraat-0.0.1-SNAPSHOT.jar"]
