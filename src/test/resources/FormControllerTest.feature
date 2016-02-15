@@ -9,7 +9,7 @@ Feature: FormController
     And I fill in my Zipcode
     And I hit the submit button
     Then I should see my name and address data on the next page and it is also saved
-    And The browser should be closed
+    #And The browser should be closed
 
   Scenario: Fill in form on website with all data
     Given That the website is running and I navigated to it
@@ -20,13 +20,19 @@ Feature: FormController
     And I fill in my Zipcode with "1111AA"
     And I hit the submit button
     Then I should see my name and address data on the next page and it is also saved
-    And The browser should be closed
+    #And The browser should be closed
 
   Scenario Outline: test
     Given That the website is running and I navigated to it
     When I fill in my firstName with "<firstname>"
-    Then The browser should be closed
+    And I fill in my lastName with "<lastname>"
+    And I fill in my StreetName with "<streetname>"
+    And I fill in my HouseNumber with "<housenumber>"
+    And I fill in my Zipcode with "<zip>"
+    And I hit the submit button
+    Then I should see my name and address data on the next page and it is also saved
+    And The browser should be closed
     Examples:
-    |firstname|
-    |jozef    |
-    |vincent  |
+      | firstname | lastname | streetname  | housenumber | zip    |
+      | jozef     | Bilkes   | Test Straat | 29          | 1121AX |
+      | vincent   | Free     | Zonnelaan   | 221         | 9742BE |
