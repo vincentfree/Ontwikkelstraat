@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions (
         features = "src/test/resources/",
         plugin = {"html:target/cukes","json:target/cucumber/tests.cucumber"})
-public class ITFormController {
+public class ITFormControllerTest {
 
 }
