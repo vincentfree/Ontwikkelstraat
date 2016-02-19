@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/vincentfree/Ontwikkelstraat.svg?branch=master)](https://travis-ci.org/vincentfree/Ontwikkelstraat)
 [![Circle CI](https://circleci.com/gh/vincentfree/Ontwikkelstraat.svg?style=svg)](https://circleci.com/gh/vincentfree/Ontwikkelstraat)
 [![Coverage Status](https://coveralls.io/repos/vincentfree/Ontwikkelstraat/badge.svg?branch=master&service=github)](https://coveralls.io/github/vincentfree/Ontwikkelstraat?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/947ce911727c4911952b536ddd7511fc)](https://www.codacy.com/app/vinsterdamus/Ontwikkelstraat)
 # Ontwikkelstraat
 
 ### Afhankelijkheden
