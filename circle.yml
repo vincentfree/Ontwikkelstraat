@@ -8,7 +8,7 @@ test:
      - find . -type f -regex ".*/target/cucumber/.*cucumber" -exec cp {} $CIRCLE_TEST_REPORTS/cucumber/ \;
      - mkdir -p $CIRCLE_TEST_REPORTS/webreport/
      - cp -r ./target/cukes/ $CIRCLE_TEST_REPORTS/webreport/
-     - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report -DskipTests
+     - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report #-DskipTests
      - mkdir -p $CIRCLE_TEST_REPORTS/unit_test/report/
      - mkdir -p $CIRCLE_TEST_REPORTS/junit/
      - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
