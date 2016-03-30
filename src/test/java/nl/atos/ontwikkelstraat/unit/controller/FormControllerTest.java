@@ -61,4 +61,9 @@ public class FormControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    public void setNAW() throws Exception {
+        this.mockMvc.perform(post("/naw").accept(MediaType.APPLICATION_JSON_UTF8)).andExpect(status().isOk());
+    }
+
 }
