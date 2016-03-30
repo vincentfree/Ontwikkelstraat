@@ -1,4 +1,4 @@
-package nl.atos.ontwikkelstraat.unit.pojo;
+package nl.atos.ontwikkelstraat.pojo;
 
 import nl.atos.ontwikkelstraat.pojo.FormData;
 import org.junit.Test;

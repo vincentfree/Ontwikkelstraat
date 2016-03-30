@@ -1,4 +1,4 @@
-package nl.atos.ontwikkelstraat.unit.controller;
+package nl.atos.ontwikkelstraat.controller;
 
 import nl.atos.ontwikkelstraat.controller.FormController;
 import nl.atos.ontwikkelstraat.pojo.FormData;
