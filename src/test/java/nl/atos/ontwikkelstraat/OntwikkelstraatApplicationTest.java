@@ -15,7 +15,7 @@ public class OntwikkelstraatApplicationTest {
     }
 
     @After
-    public void tearDwon() {
+    public void tearDown() {
 
     }
 
