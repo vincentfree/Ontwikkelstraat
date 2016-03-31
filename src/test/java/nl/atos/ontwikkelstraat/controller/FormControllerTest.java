@@ -1,6 +1,5 @@
 package nl.atos.ontwikkelstraat.controller;
 
-import nl.atos.ontwikkelstraat.controller.FormController;
 import nl.atos.ontwikkelstraat.pojo.FormData;
 import org.junit.Before;
 import org.junit.Test;
