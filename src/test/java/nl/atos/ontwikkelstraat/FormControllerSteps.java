@@ -88,7 +88,7 @@ public class FormControllerSteps {
     }
 
     @Then("^I should see my name and address data on the next page and it is also saved$")
-    public void i_should_see_my_name_and_address_data_on_the_next_page_and_it_is_also_saved()  {
+    public void iShouldSeeMyNameAndAddressDataOnTheNextPageAndItIsAlsoSaved()  {
         assertEquals(formData.getName(), webdriver.findElement(By.id("name")).getAttribute("value"));
         assertEquals(formData.getSurname(), webdriver.findElement(By.id("surname")).getAttribute("value"));
         assertEquals(formData.getStreetName(), webdriver.findElement(By.id("streetName")).getAttribute("value"));
