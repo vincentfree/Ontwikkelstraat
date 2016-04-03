@@ -11,19 +11,20 @@ import static org.junit.Assert.assertNotNull;
  */
 public class OntwikkelstraatApplicationTest {
 
+    OntwikkelstraatApplication application;
     @Before
     public void setUp() {
-
+        application = new OntwikkelstraatApplication();
     }
 
     @After
     public void tearDown() {
-
+        application = null;
     }
 
     @Test
     public void mainApplication() {
-        OntwikkelstraatApplication application = new OntwikkelstraatApplication();
+
         assertNotNull(application);
 
     }
