@@ -23,9 +23,14 @@ public class OntwikkelstraatApplicationTest {
     }
 
     @Test
-    public void mainApplication() {
+    public void Application() {
 
         assertNotNull(application);
 
+    }
+    @Test
+    public void mainApplicaion(){
+        OntwikkelstraatApplication.main(new String[]{});
+        assertNotNull(OntwikkelstraatApplication.class);
     }
 }
