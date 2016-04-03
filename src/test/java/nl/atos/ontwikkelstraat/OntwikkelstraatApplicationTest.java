@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * Created by nerom on 31-3-2016.
  */
@@ -21,6 +23,8 @@ public class OntwikkelstraatApplicationTest {
 
     @Test
     public void mainApplication() {
-        OntwikkelstraatApplication.main(new String[]{});
+        OntwikkelstraatApplication application = new OntwikkelstraatApplication();
+        assertNotNull(application);
+
     }
 }
