@@ -37,9 +37,9 @@ public class FormControllerSteps {
     public void thatTheWebsiteIsRunningAndINavigatedToIt() throws InterruptedException {
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-        if (System.getenv("TRAVIS").equals("true")) {
+        /*if (System.getenv("TRAVIS").equals("true")) {
             webdriver.get("localhost:4445");
-        } else webdriver.get("http://localhost:8080/");
+        } else*/ webdriver.get("http://localhost:8080/");
 
     }
 
