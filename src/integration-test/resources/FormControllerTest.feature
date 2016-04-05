@@ -9,7 +9,7 @@ Feature: FormController
     And I fill in my Zipcode
     And I hit the submit button
     Then I should see my name and address data on the next page and it is also saved
-    And After checking the values I want to go back to the main page
+    #And The browser should be closed
 
   Scenario: Fill in form on website with all data
     Given That the website is running and I navigated to it
@@ -20,7 +20,7 @@ Feature: FormController
     And I fill in my Zipcode with "1111AA"
     And I hit the submit button
     Then I should see my name and address data on the next page and it is also saved
-    And After checking the values I want to go back to the main page
+    #And The browser should be closed
 
   Scenario Outline: test
     Given That the website is running and I navigated to it
@@ -31,7 +31,6 @@ Feature: FormController
     And I fill in my Zipcode with "<zip>"
     And I hit the submit button
     Then I should see my name and address data on the next page and it is also saved
-    And After checking the values I want to go back to the main page
     And The browser should be closed
     Examples:
       | firstname | lastname | streetname  | housenumber | zip    |

@@ -41,7 +41,7 @@ public class FormController {
 
         model.addAttribute("fullName", formData.getName() + " " + formData.getSurname());
         model.addAttribute("address",
-                formData.getStreetName() + " " + formData.getHouseNumber() + "\n" + formData.getZipCode());
+                formData.getStreetName() + " " + formData.getHouseNumber() + "\n" + formData.getZipCode() + "\n" + "Groningen");
 
         return "naw";
     }

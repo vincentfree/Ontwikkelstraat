@@ -1,5 +1,6 @@
-package nl.atos.ontwikkelstraat.controller;
+package nl.atos.ontwikkelstraat.unit.controller;
 
+import nl.atos.ontwikkelstraat.controller.FormController;
 import nl.atos.ontwikkelstraat.pojo.FormData;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +12,6 @@ import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuild
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-
 public class FormControllerTest {
 
     private MockMvc mockMvc;
@@ -19,7 +19,7 @@ public class FormControllerTest {
 
 
     @Before
-    public void setUp() {
+    public void setup() {
         String firstName = "testFirst";
         String surName = "testSur";
         String streetName = "testStreet";
