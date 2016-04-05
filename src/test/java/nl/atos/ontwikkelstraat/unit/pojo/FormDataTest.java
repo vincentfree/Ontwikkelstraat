@@ -1,12 +1,13 @@
-package nl.atos.ontwikkelstraat.pojo;
+package nl.atos.ontwikkelstraat.unit.pojo;
 
+import nl.atos.ontwikkelstraat.pojo.FormData;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class FormDataTest {
 
-    public FormData formData = new FormData("Henk", "Visser", "Hereweg", 112, "9714AP");
+    FormData formData = new FormData("Henk", "Visser", "Hereweg", 112, "9714AP");
 
     @Test
     public void getName() {
