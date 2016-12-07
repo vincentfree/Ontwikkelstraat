@@ -17,3 +17,4 @@ CMD mvn spring-boot:run
 #RUN mvn install -Dmaven.test.skip=true
 # commando voor het uitvoeren van java jar
 #CMD ["java", "-jar", "/usr/share/app/target/Ontwikkelstraat-0.0.1-SNAPSHOT.jar"]
+#
