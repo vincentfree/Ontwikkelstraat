@@ -12,6 +12,7 @@ RUN apk --update add curl && \
 RUN mkdir -p /usr/share/app
 WORKDIR /usr/share/app
 COPY . /usr/share/app
+EXPOSE 8080
 CMD mvn spring-boot:run
 #RUN mvn install -Dmaven.test.skip=true
 # commando voor het uitvoeren van java jar
