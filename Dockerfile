@@ -2,7 +2,8 @@
 FROM anapsix/alpine-java:jdk8
 ENV MAVEN_VERSION 3.3.3
 ENV PATH /usr/share/apache-maven-${MAVEN_VERSION}/bin:${PATH}
-
+ENV APPVERSION 1.0.0
+ENV APPLOCATION /usr/share/app/target/Ontwikkelstraat-${APPVERSION}.jar 
 RUN apk --update add curl && \
     curl http://apache.mirror.anlx.net/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz > /usr/share/maven.tar.gz && \
     cd /usr/share && \
@@ -13,8 +14,7 @@ RUN mkdir -p /usr/share/app
 WORKDIR /usr/share/app
 COPY . /usr/share/app
 EXPOSE 8080
-CMD mvn spring-boot:run
-#RUN mvn install -Dmaven.test.skip=true
+#CMD mvn spring-boot:run
+RUN mvn install -Dmaven.test.skip=true
 # commando voor het uitvoeren van java jar
-#CMD ["java", "-jar", "/usr/share/app/target/Ontwikkelstraat-0.0.1-SNAPSHOT.jar"]
-#
+CMD ["java", "-jar", "${APPLOCATION}"]
