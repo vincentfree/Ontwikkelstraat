@@ -1,6 +1,6 @@
 # voert automatisch install uit
 FROM anapsix/alpine-java:jdk8
-ENV MAVEN_VERSION 3.3.3
+ENV MAVEN_VERSION 3.3.9
 ENV PATH /usr/share/apache-maven-${MAVEN_VERSION}/bin:${PATH}
 ENV APPVERSION 1.0.0
 ENV APPLOCATION /usr/share/app/target/Ontwikkelstraat-${APPVERSION}.jar 
